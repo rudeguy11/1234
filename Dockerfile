@@ -16,8 +16,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
-COPY start.sh /app/start.sh
-COPY mods /app/mods
-RUN chmod +x /app/start.sh
+COPY . /app/
+RUN mkdir -p /app/mods && chmod +x /app/start.sh
 
 CMD ["/app/start.sh"]

@@ -17,7 +17,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 WORKDIR /app
 COPY start.sh /app/start.sh
-COPY mods /app/mods
+COPY *.jar /app/mods/
 RUN chmod +x /app/start.sh
 
 CMD ["/app/start.sh"]
